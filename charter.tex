@@ -1,13 +1,13 @@
 \documentclass[
 11pt, % The default document font size, options: 10pt, 11pt, 12pt
-codirector, % Uncomment to add a codirector to the title page
+%codirector, % Uncomment to add a codirector to the title page
 ]{charter} 
 
 
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Título del proyecto} 
+\titulo{Extensión de plataforma de detección RFID Atheling} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 \posgrado{Carrera de Especialización en Sistemas Embebidos} 
@@ -17,18 +17,18 @@ codirector, % Uncomment to add a codirector to the title page
 %\posgrado{Maestría en Internet de las cosas}
 
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
-\autor{Nombre del Autor} 
+\autor{Mag. Ing. Andrade R. Edda G.} 
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Nombre del Director}
-\pertenenciaDirector{pertenencia} 
+\director{Esp. Ing. Abbate Santiago}
+\pertenenciaDirector{EmTech} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
-\codirector{John Doe} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
-\pertenenciaCoDirector{FIUBA}
+\codirector{Falta Definir} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
+\pertenenciaCoDirector{Falta Definir}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
-\cliente{Nombre del cliente}
-\empresaCliente{Empresa del cliente}
+\cliente{Mauro Koenig}
+\empresaCliente{EmTech}
 
 % Nombre y pertenencia de los jurados, se pueden usar el cualquier lugar del documento con el comando \jurunoname, \jurdosname y \jurtresname y \perteunoname, \pertedosname y \pertetresname.
 \juradoUno{Nombre y Apellido (1)}
@@ -38,9 +38,9 @@ codirector, % Uncomment to add a codirector to the title page
 \juradoTres{Nombre y Apellido (3)}
 \pertenenciaJurTres{pertenencia (3)}
  
-\fechaINICIO{30 de abril de 2021}		%Fecha de inicio de la cursada de GdP \fechaInicioName
-\fechaFINALPlan{18 de junio de 2021} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{15 de mayo de 2022}	%Fecha de defensa pública del trabajo final
+\fechaINICIO{22 de agosto de 2023}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaFINALPlan{10 de octubre de 2023} 	%Fecha de final de cursada de GdP
+\fechaFINALTrabajo{Julio 2024 (estimada)}	%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -69,8 +69,8 @@ codirector, % Uncomment to add a codirector to the title page
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 0      & Creación del documento                                 &\fechaInicioName \\ \hline
-%1      & Se completa hasta el punto 4 inclusive                 & dd/mm/aaaa \\ \hline
-%2      & Se completa hasta el punto 7 inclusive
+1      & Se completa hasta el punto 5 inclusive                 & 7 de septiembre de 2023 \\ \hline
+2      & Se completa hasta el punto 9 inclusive y se agregan correcciones de la revisión 1  & 14 de septiembre de 2023 \\ \hline
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
 %		  Así                                                    & dd/mm/aaaa \\ \hline
@@ -92,7 +92,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en \textcolor{red}{la implementación de un prototipo de un sistema de control de temperatura de un calefón}, y tendrá un presupuesto preliminar estimado de \textcolor{red}{600} h de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con la \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en la implementación de una etapa de autotuning para lograr el uso de la plataforma de detección RFID de Atheling con antenas de distinto alcance, y tendrá un presupuesto preliminar estimado de 825 h de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -115,51 +115,33 @@ Se adjunta a esta acta la planificación inicial.
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
+Con el crecimiento exponencial de la población mundial, la producción de alimentos cobró una relevancia fundamental en el mundo globalizado y moderno en el que vivimos. Es por ello que la automatización de los procesos productivos resulta de gran interés. 
 
-\begin{consigna}{red} % El bloque "consigna" se usa para poner texto en rojo y dar una pequeña ayuda sobre cómo completar la sección. En cada entrega parcial deben eliminar los comandos begin y end del bloque consigna de las secciones que hayan completado.
+Abastecer las grandes demandas de la industria cárnica requiere de un exhaustivo trabajo en zonas agrestes de gran extensión. Es por ello que la compañía EmTech desarrolló distintas plataformas marca Atheling, que se encargan de monitorear a los animales de forma automatizada y remota. Los sistemas de Atheling se encuentran instrumentados con múltiples sensores que permiten mantener un registro de los animales. Cada animal es identificado con un único ID (caravana electrónica HDX). Los datos recolectados por las antenas de Atheling se transmiten y procesan de modo tal que el productor tiene todas las variables relevantes disponibles al alcance de dispositivos de uso cotidiano, como un celular. Esto permite la toma de decisiones en tiempo real, fundamentadas en datos concretos, con la finalidad de optimizar la producción.  
 
-El objetivo es que el lector en una o dos páginas entienda de qué trata el proyecto y cuáles son sus desafíos, cuál es la motivación para realizarlo y su importancia.
+En el marco de la aplicación antes mencionada, la compañía EmTech requiere extender la actual plataforma de detección de animales, para lograr obtener una lectura confiable de las caravanas electrónicas portadas por éstos desde distintas antenas y en distintas condiciones ambientales, rediseñándola para incluir un nuevo microprocesador de ultra bajo consumo. El objetivo del proyecto es portar el código al nuevo microprocesador e implementar una etapa de autosintonización que maximice la señal recibida desde las antenas de Atheling de corto y largo alcance. 
 
-Se debe introducir el contexto del proyecto, el estado del arte en la temática, describir la propuesta de valor, cúal es el problema que atiende y cuál es la solución que se propone. Se debe dar una descripción funcional de la solución que incluya un diagrama en bloques.
+El proyecto presentado en este documento es parte del programa de vinculación con empresas y tiene como objetivo implementar la extensión de la plataforma de detección RFID introducida anteriormente, la cual actualmente se encuentra en uso. Para ello es necesario calcular y simular la etapa de autosintonización con ambas antenas (largo y corto alcance), actualizar el diseño del circuito impreso, generar los archivos de fabricación, portar y actualizar el firmware para que el nuevo microprocesador realice la sintonización con ambas antenas. Por último, se requiere realizar pruebas de validación y un informe de sus resultados. El proyecto será llevado a cabo por la autora de este documento en conjunto con colaboradores de la compañía EmTech.
 
-Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
+La etapa de autosintonización con las antenas se realiza por medio de un banco de capacitores con llaves, cuya conmutación es comandada por el microcontrolador embebido en la plataforma. Dicho microcontrolador detecta de forma automática la combinación óptima de capacitores para lograr comunicarse con cada antena. En la Figura 1 se muestra un diagrama de bloques de la solución. El color marrón representa la plataforma como es actualmente, mientras que el color azul muestra la propuesta de extensión. En el esquema se proponen cambios en otros módulos de comunicación, cuyo alcance excede al de este trabajo.   
 
-\begin{itemize}
-	\item ¿Cuál es el contexto del proyecto, es un emprendimiento personal, un proyecto para una empresa, es parte del programa de vinculación con empresas del posgrado?
-	\item ¿Existen o aplican condiciones especiales al proyecto, financiamiento de algún programa público o privado, acuerdos de confidencialidad, acuerdos sobre la propiedad intelectual de los entregables u otros?
-	\item ¿Cómo se compara la solución propuesta con el estado del arte en el campo de aplicación? ¿En qué aspectos destaca?
-	\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
-	\item ¿En qué estado del ciclo de vida está la solución que se propone?
-	\item ¿Cuáles son las características del cliente (el adoptante de los entregables del proyecto) qué valora, qué necesita?
-	\item ¿Por dónde pasa la innovación?
-\end{itemize}
 
-La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema} y descripción funcional de la solución propuesta.
 
-Las figuras se deben mencionar en el texto ANTES de que aparezcan con una frase como la siguiente: ``En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''.  La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
+
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.5\textwidth]{./Figuras/diagBloques.png}
+\includegraphics[width=1\textwidth]{./Figuras/Diagrama-de-bloques.png}
 \caption{Diagrama en bloques del sistema}
 \label{fig:diagBloques}
 \end{figure}
 
 \vspace{25px}
 
-El tamaño de la tipografía en TODAS las figuras debe ser adecuado para que NO pase lo que ocurre acá, donde el lector debe esforzarse para poder leer el texto. Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama, preferentemente en la gama de colores pastel.
-\end{consigna}
 
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
 
-\begin{consigna}{red} % este comando se debe borrar para la entrega, junto con la contraparte \end{consigna}{red} 
- 
-\textbf{Nota importante:} borrar esto y todas las consignas en color rojo antes de entregar este documento). Esto se hace eliminando el par de comandos que forman el bloque consigna, \verb!\begin{consigna}{red}! y \verb!\end{consigna}{red}! del código. 
- 
-Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos. Si se considera que una persona cumple dos o más roles, entonces solo dejarla en el rol más importante. 
-
-Por ejemplo, si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente. Si una persona es el Responsable, no debe ser colocado también como miembro del equipo.
 
 
 \begin{table}[ht]
@@ -168,179 +150,211 @@ Por ejemplo, si una persona es Cliente pero también colabora u orienta, dejarla
 \begin{tabularx}{\linewidth}{@{}|l|X|X|l|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0} 
-Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   &                   &              	&        	\\ \hline
-Cliente       & \clientename      &\empclientename	&        	\\ \hline
-Impulsor      &                   &              	&        	\\ \hline
-Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores &                   &              	&        	\\ \hline
+Rol           & Apellido y Nombre & Organización 	& Puesto 	\\ \hline
+Cliente       & \clientename      &\empclientename	&-       	\\ \hline
+Responsable   & \authorname       & FIUBA        	& Alumna 	\\ \hline
+Colaboradores & Pedranti Fernando & Atheling      	& Socio    	\\ \hline
 Orientador    & \supname	      & \pertesupname 	& Director Trabajo final \\ \hline
-Equipo        & miembro1 \newline 
-				miembro2          &              	&        	\\ \hline
-Opositores    &                   &              	&        	\\ \hline
-Usuario final &                   &              	&        	\\ \hline
+%Equipo        & Falta definir
+%				          &       -       	& -       	\\ \hline
+
 \end{tabularx}
 \end{table}
-
-El Director suele ser uno de los Orientadores.
-
-No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
-
-No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
-
-Es deseable listar a continuación las principales características de cada interesado.
- 
-Por ejemplo:
-\begin{itemize}
-	\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
-	\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
-	\item Orientador: María Gómez va a poder ayudar mucho con la definición de los requerimientos.
-\end{itemize}
-
-\end{consigna} % este comando se debe borrar para la entrega, junto con la contraparte \begin{consigna}{red}
 
 
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
-\begin{consigna}{red}
-¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
+El propósito de este proyecto es extender el uso de la plataforma de Atheling de detección de animales portadores de caravanas electrónicas para ser utilizada con diferentes antenas, implementado con un microcontrolador de ultra bajo consumo.
 
-Se recomienda que sea solo un párrafo que empiece diciendo ``El propósito de este proyecto es...''.
-\end{consigna}
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
-
-Se refiere al trabajo a hacer para entregar el producto o resultado especificado. 
-
-Explicitar todo lo quede comprendido dentro del alcance del proyecto.
-
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
-
-\end{consigna}
-
+El alcance de este proyecto comprende las siguientes actividades:
+\begin{itemize}
+	\item Simulación y cálculo de la etapa de autosintonización.
+	\item Rediseño y fabricación de un prototipo.
+	\item Adaptación del firmware al nuevo microcontrolador de ultra bajo consumo.
+	\item Actualización del firmware para que el microcontrolador realice de forma automática la sintonización con cada antena.
+	\item Planificar y realizar las pruebas de validación del prototipo.
+	\item Elaborar un informe de validación del circuito actualizado.
+\end{itemize}
+Como se especifica en la lista anterior, este proyecto no pretende entregar un equipo integrado en funcionamiento listo para su comercialización sino un prototipo. Cabe mencionar que todas las actividades enlistadas no son responsabilidad exclusiva de la autora de este documento, sino que serán realizadas en conjunto con colaboradores y miembros del equipo de la compañía EmTech-Atheling. 
 
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
 
-\begin{consigna}{red}
-``Para el desarrollo del presente proyecto se supone que: ...''
+Para lograr el éxito de este proyecto se realizan las siguientes suposiciones:
 
 \begin{itemize}
-	\item Supuesto 1
-	\item Supuesto 2...
+	\item EmTech realizó una primera aproximación de cálculo para corroborar que el hardware actual sea compatible con la aplicación requerida.
+	\item EmTech define los requerimientos detallados y el criterio de aceptabilidad de los entregables.
+	\item EmTech pone a disposición toda la información necesaria, con el nivel de detalle adecuado.
+	\item La alumna y todos las personas involucradas acuerdan la dinámica laboral, realizando un desgloce de tareas, asignándolas a quien corresponda. 
+	\item EmTech asigna los recursos humanos competentes para llevar a cabo el re-diseño y fabricación del prototipo en un plazo de tiempo acotado (falta acordar dicho plazo con la compañía).
+	\item EmTech financia la fabricación del prototipo.
+	\item EmTech pone a disposición el Hardware necesario para realizar las pruebas de validación del prototipo.
+	\item El Director de Proyecto asignado tiene las competencias y la disponibilidad de tiempo necesarios para guiar a la alumna en las tareas específicas de este proyecto. 
+	\item La alumna dispone de tiempo para dedicar al proyecto de no menos de 10hs semanales hasta su culminación.
+	
 \end{itemize}
 
-Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
-\end{consigna}
 
 \section{6. Requerimientos}
 \label{sec:requerimientos}
 
-\begin{consigna}{red}
-Los requerimientos deben numerarse y de ser posible estar agruparlos por afinidad, por ejemplo:
 
 \begin{enumerate}
-	\item Requerimientos funcionales
+	\item Requerimientos generales de funcionalidad
+	El sistema debe:
 		\begin{enumerate}
-			\item El sistema debe...
-			\item Tal componente debe...
-			\item El usuario debe poder...
+			\item  Leer etiquetas RFID HDX bajo el estándar ISO 11785.
+			\item  Sintonizar automáticamente de la etapa de radiofrecuencia para lectura de las etiquetas.
+			\item  Leer las etiquetas hasta una distancia máxima de 60 cm.
+			\item  Indicar mediante un estímulo sonoro la correcta lectura de una etiqueta.
+			\item  Implementar una comunicación MODBUS vía RS485 para la recepción de comandos de control y lectura de datos.
+			\item  Comandar una salida a relé normal abierta, vía la recepción de un comando a través de la interfaz MODBUS.
+			\item  Contar con la posibilidad de utilizar una o dos antenas, configurable vía selectores en el PCB.
+
 		\end{enumerate}
-	\item Requerimientos de documentación
+	\item Requerimientos de desarrollo del prototipo 
 		\begin{enumerate}
-			\item Requerimiento 1
-			\item Requerimiento 2 (prioridad menor)
+			\item El desarrollo del prototipo se basará en la plataforma de lectura Atheling RFID V1.
+			\item La decodificación de las etiquetas deberá implementarse con base en el circuito integrado TMS3705.
+			\item El control y procesamiento de datos del sistema debe basarse en un microcontrolador STM32L152CBT6.
+			\item La plataforma debe contar con una interfaz para su programación mediante un programador externo, sugerencia no estricta: USB ST-Link.
+			\item Se deben mantener las dimensiones 2D y fijaciones de la plataforma Atheling RFID V1.
+			\item Se deben implementar cambios en el circuito de potencia y en el tamaño de los agujeros
+			
 		\end{enumerate}
-	\item Requerimiento de testing...
-	\item Requerimientos de la interfaz...
-	\item Requerimientos interoperabilidad...
-	\item etc...
+	\item Requerimientos de firmware
+	\begin{enumerate}
+			\item Portar y/o rehacer el firmware actual para que funcione en el nuevo microcontrolador. 
+			\item Desarrollar el código para autosintonización.
+			\item Desarrollar drivers para las interfaces de programación, Módulo BLE, RS485, otros periféricos como alarmas sonoras, llaves, etc.
+			\end{enumerate}
+	\item Requerimientos de control de cambios
+	\begin{enumerate}
+			\item Se debe mantener actualizadas las versiones de código mediante el uso del repositorio de EmTech.
+			\end{enumerate}
+	
+	\item Requerimientos documentales
+	\begin{enumerate}
+			\item Se deberá realizar la documentación de desarrollo del código de acuerdo a los lineamientos de documentación de EmTech. 
+			\end{enumerate}
+			\item Requerimientos de validación y pruebas
+	\begin{enumerate}
+			\item Se deberá validar el funcionamiento del prototipo mediante pruebas de laboratorio que simulen escenarios de uso la plataforma.
+			\end{enumerate}
 \end{enumerate}
 
-Leyendo los requerimientos se debe poder interpretar cómo será el proyecto y su funcionalidad.
 
-Indicar claramente cuál es la prioridad entre los distintos requerimientos y si hay requerimientos opcionales. 
-
-No olvidarse de que los requerimientos incluyen a las regulaciones y normas vigentes!!!
-
-Y al escribirlos seguir las siguientes reglas:
-\begin{itemize}
-	\item Ser breve y conciso (nadie lee cosas largas). 
-	\item Ser específico: no dejar lugar a confusiones.
-	\item Expresar los requerimientos en términos que sean cuantificables y medibles.
-\end{itemize}
-
-\end{consigna}
 
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
 
-\begin{consigna}{red}
-Descripción: En esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
+En el siguiente párrafo se describe lo expresado por Mauro Koeing, impulsor del proyecto: "Como impulsor del proyecto quiero contar con una etapa automática de sintonización del lector con las antenas para poder utilizar la plataforma en ambientes con diversas condiciones de ruido electromagnético. También quiero mejorar la conectividad de la actual versión y agregar la opción para la utilización de más de una antena."
 
-El formato propuesto es: "como [rol] quiero [tal cosa] para [tal otra cosa]."
-
-Se debe indicar explícitamente el criterio para calcular los \textit{story points} de cada historia
-\end{consigna}
 
 \section{8. Entregables principales del proyecto}
 \label{sec:entregables}
 
-\begin{consigna}{red}
-
-Los entregables del proyecto son (ejemplo):
+Los entregables del proyecto son:
 
 \begin{itemize}
-	\item Manual de uso
-	\item Diagrama de circuitos esquemáticos
-	\item Código fuente del firmware
-	\item Diagrama de instalación
-	\item Informe final
-	\item etc...
+	\item Documento de ingeniería de la aplicación del circuito, análisis de lo que se agrega, fundamentos y líneas para hacer el esquemático + PCB.
+    \item Documentos de fabricación del PCB (Gerbers + archivo de fabricación + P and P).
+    \item Esquemáticos del PCB + BOM.
+	\item Código fuente del firmware.
+	\item Documentación del código.
+	\item Informe de cierre del proyecto.
+
 \end{itemize}
 
-\end{consigna}
 
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
 
-\begin{consigna}{red}
-El WBS debe tener relación directa o indirecta con los requerimientos.  Son todas las actividades que se harán en el proyecto para dar cumplimiento a los requerimientos. Se recomienda mostrar el WBS mediante una lista indexada:
-
 \begin{enumerate}
-\item Grupo de tareas 1
+\item Planificación del proyecto: 78 h
 	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas h)
+	\item Definir el alcance del proyecto: 10 h
+	\item Acordar metodologías de trabajo, gestión de la información, medios de comunicación: 20 h
+	\item Confeccionar el Plan de Trabajo: 48 h
 	\end{enumerate}
-\item Grupo de tareas 2
+
+\item Simulación y cálculo de la etapa de autosintonización: 45 h
 	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas h)
-	\item Tarea 3 (tantas h)
+	\item Investigar el estado del arte: 20 h
+	\item Calcular el circuito: 5 h
+	\item Simular el comportamiento del circuito: 20 h 
 	\end{enumerate}
-\item Grupo de tareas 3
+	
+\item Diseño del prototipo: 141 h
 	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas h)
-	\item Tarea 3 (tantas h)
-	\item Tarea 4 (tantas h)
-	\item Tarea 5 (tantas h)
+	\item Selecionar los componentes: 20 h
+	\item Calcular los circuitos: 10 h
+	\item Diseñar los circuitos esquemáticos: 20 h
+	\item Confeccionar memorias de cálculo: 10 h
+	\item Confeccionar Bill Of Materials (BOM): 5 h
+	\item Confeccionar esquemáticos entregables: 20 h
+	\item Diseñar el PCB: 40 h
+	\item Confeccionar documentos de fabricación (gerbers, Pick and Place, etc.): 10 h
+	\item Modelar CAD 3D del PCB: 5 h
+	\item Verificar la compatibilidad mecánica/espacial del PCB dentro del gabinete: 1 h
 	\end{enumerate}
+	
+\item Fabricación del prototipo: 120 h
+	\begin{enumerate}
+	\item Buscar proveedores y solicitar cotizaciones: 20 h
+	\item Rediseñar el PCB en función de la retroalimentación con el/los fabricantes: 10 h
+	\item Dar seguimiento a la fabricación: 10 h
+	\item Fabricar el PCB y montar componentes: 40 h
+	\item Integrar el sistema embebido al gabinete, con sus fijaciones, fuente de alimentación, etc.: 40 h
+    \end{enumerate}
+    
+\item Desarrollo de Firmware: 172 h
+	\begin{enumerate}
+	\item Estudiar el código actual: 10 h
+	\item Evaluar si recodificar completamente el código o portar: 2 h
+	\item Portar/recodificar las funcionalidades actuales para que funcionen en el nuevo microcontrolador 40 h
+	\item Desarrollar drivers para las interfaces de comunicación, programación y periféricos como alarma sonora: 80 h
+	\item Desarrollar el código de autosintonización: 40 h
+	\end{enumerate}
+
+\item Prueba del firmware: 45 h
+    \begin{enumerate}
+    \item Montar periféricos de prueba para verificación de funcionamiento del firmware: 5 h
+    \item Analizar y depurar el código: 40 h
+    \end{enumerate}
+
+\item Diseño de pruebas de validación: 19 h
+    \begin{enumerate}
+    \item Definir criterios de aceptación del comportamiento de la plataforma: 2 h
+    \item Definir el alcance de las pruebas a realizarse: 2 h
+    \item Definir los recursos necesarios (espacio, instrumentación, personal, etc): 5 h
+    \item Gestionar los recursos para asegurar la disponibilidad en el momento de realización de las pruebas: 10 h
+    \end{enumerate}
+    
+\item Pruebas de validación: 70 h
+    \begin{enumerate}
+    \item Realizar pruebas de validación: 60 h
+    \item Documentar pruebas de validación: 10 h
+    \end{enumerate}
+    
+\item Presentación final del proyecto: 135 h
+    \begin{enumerate}
+    \item Confeccionar el informe de avance: 30 h
+    \item Confeccionar las memorias del proyecto: 70 h
+    \item Confeccionar la presentación pública: 30 h
+    \item Practicar la presentación en conjunto con el director: 5 h
+    \end{enumerate}
+
+  
 \end{enumerate}
 
-Cantidad total de horas: (tantas h)
-
-Se recomienda que no haya ninguna tarea que lleve más de 40 h. 
-
-\end{consigna}
 
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
