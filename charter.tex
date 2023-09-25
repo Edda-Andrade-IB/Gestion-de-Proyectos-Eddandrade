@@ -345,11 +345,11 @@ Los entregables del proyecto son:
     \item Documentar pruebas de validación: 10 h
     \end{enumerate}
     
-\item Presentación final del proyecto: 135 h
+\item Presentación final del proyecto: 89 h
     \begin{enumerate}
     \item Confeccionar el informe de avance: 30 h
-    \item Confeccionar las memorias del proyecto: 70 h
-    \item Confeccionar la presentación pública: 30 h
+    \item Confeccionar las memorias del proyecto: 30 h
+    \item Confeccionar la presentación pública: 20 h
     \item Practicar la presentación en conjunto con el director: 5 h
     \end{enumerate}
 
@@ -389,95 +389,118 @@ Es recomendable usar colores y un cuadro indicativo describiendo qué representa
 %\rotatebox{90}{%
 \begin{ganttchart}[
 	hgrid,
-	vgrid,
-	x unit=0.12cm,
+vgrid,
+	x unit=0.15cm,
 	y unit chart=0.85cm,
-	time slot format=isodate,
-	time slot unit=day,
-	bar/.append style={fill=cyan!30},
-	group/.append style={fill=magenta!30},
-	link/.style={->, thick}
-	]{2023-08-22}{2023-12-31}
+time slot format=isodate,
+time slot unit=day,
+bar/.append style={fill=cyan!30},
+group/.append style={fill=magenta!50},
+bar/.append style={fill=cyan!30, bar label node/.append style={above=3pt}},
+%include title in canvas=false,
+%inline,
+milestone inline label node/.append style={left=5mm}
+%link/.style={->, thick}
+%link label font=\small\bfseries\color{purple}
+link/.style={|-to, line width=0.5pt, magenta},
+    bar inline label node/.style={
+	anchor=east,
+	xshift=+4.5cm,
+	yshift=0.4cm,
+}]{2023-08-22}{2023-12-16}
 	
 %{\small
 	\gantttitlecalendar{year, month} \\
 	
 	\ganttgroup{1 Planificación del Proyecto}{2023-08-22}{2023-10-10} \\
-	\ganttbar{1.1 Definir el alcance del proyecto}{2023-08-22}{2023-08-30} \\
-	\ganttbar{1.2 Acordar metodologías de trabajo}{2023-09-01}{2023-09-10} \\
-	\ganttbar{1.3 Gestionar los recursos}{2023-08-22}{2023-10-10} \\
-	\ganttbar{1.4 Confeccionar el Plan de Trabajo}{2023-08-22}{2023-10-10} \\
+	\ganttbar[name=11]{1.1 Definir el alcance del proyecto}{2023-08-22}{2023-08-30} \\
+	\ganttbar[name=12]{1.2 Acordar metodologías de trabajo}{2023-09-01}{2023-09-10} \\
+	\ganttbar[name=13]{1.3 Gestionar los recursos}{2023-08-22}{2023-10-10} \\
+	\ganttbar[name=14]{1.4 Confeccionar el Plan de Trabajo}{2023-08-22}{2023-10-10} \\
 	
-	\ganttmilestone{Presentación del Plan de Trabajo}{2023-10-10} \ganttnewline
-	
+	\ganttmilestone{Presentación del Plan de Trabajo}{2023-10-10}\\ 	
 	
 	\ganttgroup{2 Simulación y cálculo}{2023-10-16}{2023-12-16} \\
-	\ganttbar{2.1 Investigar el estado del arte}{2023-10-16}{2023-11-15} \\
-	\ganttbar{2.2 Calcular el circuito}{2023-11-18}{2023-12-02} \\
-	\ganttbar{2.3 Simular el comportamiento del circuito}{2023-12-02}{2023-12-16} \\
+	\ganttbar[name=21]{2.1 Investigar el estado del arte}{2023-10-16}{2023-11-15} \\
+	\ganttbar[name=22]{2.2 Calcular el circuito}{2023-11-18}{2023-12-02} \\
+	\ganttbar[name=23]{2.3 Simular el comportamiento del circuito}{2023-12-02}{2023-12-16} \\
 	
-	
-	
+	\ganttlink[]{21}{22}
+	\ganttlink[]{22}{23}
 
-%}	
 \end{ganttchart}
 %}
-\end{landscape}
+%\end{landscape}
 
-\begin{landscape}
-\newpage
 
+%\begin{landscape}
 %\rotatebox{90}{%
-\begin{ganttchart}[
-	hgrid,
-	vgrid,
-	x unit=0.12cm,
-	y unit chart=0.85cm,
-	time slot format=isodate,
-	time slot unit=day,
-	bar/.append style={fill=cyan!30},
-	group/.append style={fill=magenta!30},
-	link/.style={->, thick}
-	]{2023-12-16}{2024-04-07}
-	
-	\gantttitlecalendar{year, month} \\
-	
-	
-	\ganttgroup{3 Diseño del prototipo}{2023-12-18}{2024-02-09} \\
-	\ganttbar{3.1 Seleccionar los componentes}{2023-12-18}{2023-12-20} \\
-	\ganttbar{3.2 Calcular los circuitos}{2023-12-20}{2023-12-21} \\
-	\ganttbar{3.3 Diseñar los circuitos esquemáticos}{2024-01-02}{2024-01-04} \\
-	\ganttbar{3.4 Confeccionar memorias de cálculo}{2024-01-04}{2024-01-05} \\
-	\ganttbar{3.5 Confeccionar Bill Of Materials (BOM)}{2024-01-05}{2024-01-06} \\
-	\ganttbar{3.6 Confeccionar de esquemáticos entregables}{2024-01-08}{2024-01-10} \\
-	\ganttbar{3.7 Diseñar el PCBs}{2024-01-10}{2024-02-07} \\
-	\ganttbar{3.8 Confeccionar documentos de fabricación}{2024-02-07}{2024-02-08}\\
-	\ganttbar{3.9 Modelar 3D del PCB}{2024-02-08}{2024-02-09} \\
-	\ganttbar{3.10 Verificar la compatibilidad mecánica}{2024-02-09}{2024-02-09} \\
-	
-	
-	\ganttgroup{4 Fabricación del prototipo}{2024-02-09}{2024-04-07} \\
-	\ganttbar{4.1 Buscar proveedores y solicitar cotizaciones}{2024-02-09}{2024-02-15} \\
-	\ganttbar{4.2 Rediseñar el PCB}{2024-02-09}{2024-02-15} \\
-	\ganttbar{4.3 Dar seguimiento a la fabricación}{2024-02-15}{2024-03-07} \\
-\ganttbar{4.4 Montaje y puesta en marcha inicial}{2024-03-07}{2024-04-07} \\
-	\ganttbar{4.5 integrar el sistema embebido}{2024-03-07}{2024-04-07} \\
-	\ganttmilestone{Prototipo Integrado con HW funcionando}{2024-04-07} 
-
-	
-\end{ganttchart}
-%}
-\end{landscape}
-
-
 \newpage
-\begin{landscape}
-%\rotatebox{90}{%
 \begin{ganttchart}[
 	hgrid,
 vgrid,
-x unit=0.12cm,
-y unit chart=0.7cm,
+	x unit=0.15cm,
+	y unit chart=0.85cm,
+time slot format=isodate,
+time slot unit=day,
+bar/.append style={fill=cyan!30},
+group/.append style={fill=magenta!50},
+bar/.append style={fill=cyan!30, bar label node/.append style={above=3pt}},
+%include title in canvas=false,
+%inline,
+milestone inline label node/.append style={left=5mm}
+%link/.style={->, thick}
+%link label font=\small\bfseries\color{purple}
+link/.style={|-to, line width=0.5pt, magenta},
+    bar inline label node/.style={
+	anchor=east,
+	xshift=+4.5cm,
+	yshift=0.4cm,
+}]
+{2023-12-16}{2024-04-10}
+	
+	\gantttitlecalendar{year, month} \\
+	
+	\ganttgroup{3 Diseño del prototipo}{2023-12-18}{2024-02-09}\\
+	\ganttbar[name=31]{3.1 Seleccionar los componentes}{2023-12-18}{2023-12-20} \\
+	\ganttbar[name=32]{3.2 Calcular circuitos}{2023-12-20}{2023-12-21} \\
+	\ganttbar[name=33]{3.3 Diseñar esquemáticos}{2024-01-02}{2024-01-04} \\
+	\ganttbar[name=34]{3.4 Confeccionar memorias}{2024-01-04}{2024-01-05} \\
+	\ganttbar[name=35]{3.5 Confeccionar BOM}{2024-01-05}{2024-01-06} \\
+	\ganttbar[name=36]{3.6 Confeccionar de esquemáticos entregables}{2024-01-08}{2024-01-10} \\
+	\ganttbar[name=37]{3.7 Diseñar el PCBs}{2024-01-10}{2024-02-07} \\
+	\ganttbar[name=38]{3.8 Confeccionar documentos de fabricación}{2024-02-07}{2024-02-08}\\
+	\ganttbar[name=39]{3.9 Modelar 3D del PCB}{2024-02-08}{2024-02-09} \\
+	\ganttbar[name=310]{3.10 Verificar la compatibilidad mecánica}{2024-02-09}{2024-02-09} \\
+	
+	
+	\ganttgroup{4 Fabricación del prototipo}{2024-02-09}{2024-04-07} \\
+	\ganttbar[name=31]{4.1 Gestión de compras}{2024-02-09}{2024-02-15} \\
+	\ganttbar[name=42]{4.2 Rediseñar el PCB}{2024-02-09}{2024-02-15} \\
+	\ganttbar[name=43]{4.3 Dar seguimiento a la fabricación}{2024-02-15}{2024-03-07} \\
+    \ganttbar[name=44]{4.4 Montaje y puesta en marcha inicial}{2024-03-07}{2024-04-07} \\
+	\ganttbar[name=45]{4.5 integrar el sistema embebido}{2024-03-07}{2024-04-07} \\
+	\ganttmilestone{Prototipo Integrado con HW funcionando}{2024-04-07}\\
+
+\ganttlink[]{31}{32}
+\ganttlink[]{32}{33}
+\ganttlink[]{32}{34}
+\ganttlink[]{35}{37}	
+\ganttlink[]{37}{38}
+\ganttlink[]{39}{310}
+\end{ganttchart}
+%}
+%\end{landscape}
+
+
+%\begin{landscape}
+%\rotatebox{90}{%
+\newpage
+\begin{ganttchart}[
+	hgrid,
+vgrid,
+	x unit=0.15cm,
+	y unit chart=0.85cm,
 time slot format=isodate,
 time slot unit=day,
 bar/.append style={fill=cyan!30},
@@ -494,154 +517,84 @@ link/.style={|-to, line width=0.5pt, magenta},
 	xshift=+4.5cm,
 	yshift=0.4cm,
 }
-]{2024-01-24}{2024-05-28}
+]{2024-04-07}{2024-06-28}
 
 	
 	\gantttitlecalendar{year, month} \\
 	
-	\ganttgroup{4 Fabricación del prototipo}{2023-12-18}{2024-01-24} \\
-	\ganttbar{4.1 Buscar proveedores y solicitar cotizaciones}{2023-12-18}{2023-12-22} \\
-	\ganttbar{4.2 Rediseñar el PCB en función de\* la retroalimentación con el/los fabricantes}{2023-12-25}{2024-01-03} \\
-	\ganttbar{4.3 Dar seguimiento a la fabricación}{2024-01-03}{2024-01-12} \\
-	\ganttbar{4.4 Montaje de componentes y puesta en marcha inicial}{2024-01-15}{2024-01-24} \\
-	\ganttbar{4.5 ntegrar el sistema embebido}{2024-01-15}{2024-01-24} \\
+	\ganttgroup{5 Desarrollo de Firmware}{2024-04-07}{2024-05-28} \\
+	\ganttbar[name=51]{5.1 Estudiar el código actual}{2024-04-07}{2024-04-08} \\
+	\ganttbar[name=52]{5.2 Evaluar si recodificar o portar}{2024-04-08}{2024-04-11} \\
+	\ganttbar[name=53]{5.3 Portar/recodificar las funcionalidades actuales}{2024-04-08}{2024-04-30} \\
+	\ganttbar[name=54]{5.4 Desarrollar drivers}{2024-04-30}{2024-5-10}\\
+	\ganttbar[name=55]{5.5 Desarrollar código de autosintonización}{2024-05-10}{2024-05-27} \\
+	\ganttmilestone[name=56]{Presentación al cliente del Código}{2024-05-28} \\
 	
+	\ganttgroup{6 Prueba del firmware}{2024-04-07}{2024-06-07}\\
+	\ganttbar[name=61]{6.1 Montar periféricos de prueba 
+}{2024-04-07}{2024-04-30} \\
+	\ganttbar[name=62]{6.2 Prueba de FW y corrección de bugs}{2024-05-28}{2024-06-07} \\
 
-	\ganttgroup{5 Desarrollo de Firmware}{2024-01-24}{2024-02-21} \\
-	\ganttbar[name=51]{5.1 Estudiar el código actual}{2024-01-24}{2024-01-31} \\
-	\ganttbar[name=52]{5.2 Evaluar si recodificar completamente el código o porta}{2024-01-31}{2024-02-14} \\
-	\ganttbar[name=53]{5.3 Portar/recodificar las funcionalidades actuales para que funcionen en el nuevo microcontrolador}{2024-02-14}{2024-02-21} \\
-	\ganttbar[name=54]{5.4 Desarrollar drivers para las interfaces de comunicación, programación y periféricos}{2024-02-14}{2024-02-21} \\
-	\ganttbar[name=55]{5.5 Desarrollar el código de autosintonización}{2024-02-14}{2024-02-21} \\
-	\ganttbar[name=56]{5.6 Presentación del Código fuente sin probar}{2024-02-14}{2024-02-21} \\
-	
-	\ganttgroup{6 Prueba del firmware}{2024-02-21}{2024-03-06} \\
-	\ganttbar[name=61]{6.1 Montar periféricos de prueba para verificación de funcionamiento del firmware
-}{2024-02-21}{2024-02-28} \\
-	\ganttbar{6.2 Prueba de funcionalidad del FW y corrección de bugs}{2024-02-28}{2024-03-06} \\
-
-	
-	
 	\ganttlink[]{51}{52}
 	\ganttlink[]{52}{53}
-	\ganttlink[]{53}{61}
+	\ganttlink[]{52}{54}
+	\ganttlink[]{53}{55}
+	\ganttlink[]{56}{61}
+	\ganttlink[]{61}{62}
+
+	
+
 
 \end{ganttchart}
-\end{landscape}
+%\end{landscape}
 %}
 
 
-\rotatebox{90}{%
+%\rotatebox{90}{%
+\newpage
+%\begin{landscape}
 \begin{ganttchart}[
 	hgrid,
 	vgrid,
-	x unit=0.12cm,
-	y unit chart=0.7cm,
+	x unit=0.25cm,
+	y unit chart=1cm,
 	time slot format=isodate,
 	time slot unit=day,
-	bar/.append style={fill=blue!30},
-	group/.append style={fill=blue!50},
+	bar/.append style={fill=cyan!30},
+	group/.append style={fill=magenta!50},
 	link/.style={->, thick}
-	]{2023-09-08}{2023-12-15}
+	]{2024-05-28} {2024-08-03}
 	
 	\gantttitlecalendar{year, month} \\
 
-\ganttgroup{7 Diseño de pruebas de validación}{2024-03-06}{2024-05-08} \\
-	\ganttbar{7.1 Definir criterios de aceptación del comportamiento de la plataforma}{2024-03-06}{2024-03-20} \\
-	\ganttbar{7.2 Definir el alcance de las pruebas a realizarse}{2024-03-20}{2024-03-27} \\
-	\ganttbar{7.3 Definir los recursos necesarios}{2024-03-27}{2024-04-03} \\
+\ganttgroup{7 Diseño de pruebas de validación}{2024-05-28}{2024-06-07} \\
+	\ganttbar[name=71]{7.1 Definir criterios de aceptación}{2024-05-28}{2024-06-02} \\
+	\ganttbar[name=72]{7.2 Definir el alcance de las pruebas}{2024-06-02}{2024-06-03} \\
+	\ganttbar[name=73]{7.3 Definir los recursos necesarios}{2024-06-03}{2024-06-03}  \\
 
 	
-	\ganttgroup{8 Pruebas de validación}{2024-05-08}{2024-05-22} \\
-	\ganttbar{8.1 Realizar pruebas de validación}{2024-05-08}{2024-05-22} \\
-	\ganttbar{8.2 Culminación de las pruebas de validación}{2024-05-22}{2024-05-22} \\
-	\ganttmilestone{8.3 Documentar pruebas de validación}{2024-05-22}
+	\ganttgroup{8 Pruebas de validación}{2024-06-08}{2024-07-08} \\
+	\ganttbar[name=81]{8.1 Realizar pruebas de validación}{2024-06-08}{2024-07-07} \\
+	\ganttmilestone{Culminación de las pruebas de validación}{2024-07-07} \\
+	\ganttbar[name=82]{8.2 Documentar pruebas de validación}{2024-07-07}{2024-07-08}\\
 	
 	
 	
 	
-	\ganttgroup{9 Presentación final del proyectos}{2024-03-06}{2024-05-08} \\
-	\ganttbar{9.1 Confeccionar el informe de avance}{2024-03-06}{2024-03-20} \\
-	\ganttbar{9.2 Presentación del Avance del Proyecto}{2024-03-20}{2024-03-27} \\
-	\ganttbar{9.3 Confeccionar las memorias del proyecton}{2024-03-27}{2024-04-03} \\
-	\ganttbar{9.4 Confeccionar la presentación pública}{2024-04-03}{2024-04-10} \\
-	\ganttbar{9.5 Practicar la presentación en conjunto con el director}{2024-04-10}{2024-04-19} \\
-	\ganttbar{9.6 Defensa Pública del Proyecto}{2024-04-22}{2024-04-26} \\
-	
+	\ganttgroup{9 Presentación final del proyecto}{2024-07-07}{2024-08-01} \\
+	\ganttbar[name=91]{9.1 Confeccionar el informe de avance}{2024-07-07}{2024-07-15} \\
+	\ganttmilestone{Presentación del Avance del Proyecto}{2024-07-20} \\
+	\ganttbar[name=92]{9.2 Confeccionar las memorias del proyecto}{2024-07-07}{2024-07-21} \\
+	\ganttbar[name=93]{9.3 Confeccionar la presentación pública}{2024-07-21}{2024-07-28} \\
+	\ganttbar[name=94]{9.4 Practicar presentación}{2024-07-28}{2024-07-29} \\
+	\ganttmilestone{Defensa Pública del Proyecto}{2024-08-01}
 \end{ganttchart}
 \end{landscape}
 %}
 	
 
-
-
-\begin{consigna}{red}
-
-Existen muchos programas y recursos \textit{online} para hacer diagramas de Gantt, entre los cuales destacamos:
-
-\begin{itemize}
-\item Planner
-\item GanttProject
-\item Trello + \textit{plugins}. En el siguiente link hay un tutorial oficial: \\ \url{https://blog.trello.com/es/diagrama-de-gantt-de-un-proyecto}
-\item Creately, herramienta online colaborativa. \\\url{https://creately.com/diagram/example/ieb3p3ml/LaTeX}
-\item Se puede hacer en latex con el paquete \textit{pgfgantt}\\ \url{http://ctan.dcc.uchile.cl/graphics/pgf/contrib/pgfgantt/pgfgantt.pdf}
-\end{itemize}
-
-Pegar acá una captura de pantalla del diagrama de Gantt, cuidando que la letra sea suficientemente grande como para ser legible. 
-Si el diagrama queda demasiado ancho, se puede pegar primero la ``tabla'' del Gantt y luego pegar la parte del diagrama de barras del diagrama de Gantt.
-
-Configurar el software para que en la parte de la tabla muestre los códigos del EDT (WBS).\\
-Configurar el software para que al lado de cada barra muestre el nombre de cada tarea.\\
-Revisar que la fecha de finalización coincida con lo indicado en el Acta Constitutiva.
-
-En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de Gantt realizado con el paquete de \textit{pgfgantt}. En la plantilla pueden ver el código que lo genera y usarlo de base para construir el propio.
-
-\begin{figure}[htbp]
-\begin{center}
-\begin{ganttchart}{1}{12}
-  \gantttitle{2020}{12} \\
-  \gantttitlelist{1,...,12}{1} \\
-  \ganttgroup{Group 1}{1}{7} \\
-  \ganttbar{Task 1}{1}{2} \\
-  \ganttlinkedbar{Task 2}{3}{7} \ganttnewline
-  \ganttmilestone{Milestone o hito}{7} \ganttnewline
-  \ganttbar{Final Task}{8}{12}
-  \ganttlink{elem2}{elem3}
-  \ganttlink{elem3}{elem4}
-\end{ganttchart}
-\end{center}
-\caption{Diagrama de Gantt de ejemplo}
-\label{fig:gantt}
-\end{figure}
-
-
-\begin{landscape}
-\begin{figure}[htpb]
-\centering 
-\includegraphics[height=.85\textheight]{./Figuras/Gantt-2.png}
-\caption{Ejemplo de diagrama de Gantt rotado}
-\label{fig:diagGantt}
-\end{figure}
-
-\end{landscape}
-
-\end{consigna}
-
-
 \section{12. Presupuesto detallado del proyecto}
 \label{sec:presupuesto}
-
-\begin{consigna}{red}
-Si el proyecto es complejo entonces separarlo en partes:
-\begin{itemize}
-	\item Un total global, indicando el subtotal acumulado por cada una de las áreas.
-	\item El desglose detallado del subtotal de cada una de las áreas.
-\end{itemize}
-
-IMPORTANTE: No olvidarse de considerar los COSTOS INDIRECTOS.
-
-\end{consigna}
-
 \begin{table}[htpb]
 \centering
 \begin{tabularx}{\linewidth}{@{}|X|c|r|r|@{}}
@@ -653,19 +606,20 @@ Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
-\multicolumn{1}{|l|}{} &
+ & 
+  \multicolumn{1}{c|}{837} &
+  \multicolumn{1}{c|}{20} &
+  \multicolumn{1}{c|}{16740} \\ \hline
+  \multicolumn{1}{|l|}{Horas de ingeniería} &
+ & 
+  \multicolumn{1}{c|}{3} &
+  \multicolumn{1}{c|}{250} &
+  \multicolumn{1}{c|}{350} \\ \hline
+\multicolumn{1}{|l|}{Componentes y Fabricación de PCB} &
    &
    &
    \\ \hline
-\multicolumn{1}{|l|}{} &
+\multicolumn{1}{|l|}{Componentes y Fabricación de PCB} &
    &
    &
    \\ \hline
@@ -699,13 +653,12 @@ Descripción &
 \end{table}
 
 
+
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
 
-\begin{consigna}{red}
-a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
  
-Riesgo 1: detallar el riesgo (riesgo es algo que si ocurre altera los planes previstos de forma negativa)
+Riesgo 1: falta de disponibilidad de componentes
 \begin{itemize}
 	\item Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).\\
 	Justificar el motivo por el cual se asigna determinado número de severidad (S).
@@ -760,7 +713,7 @@ Riesgo 2: plan de mitigación (si por el RPN fuera necesario elaborar un plan de
  
 Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
 
-\end{consigna}
+
 
 
 \section{14. Gestión de la calidad}
@@ -785,20 +738,6 @@ Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos
 
 \section{15. Procesos de cierre}    
 \label{sec:cierre}
-
-\begin{consigna}{red}
-Establecer las pautas de trabajo para realizar una reunión final de evaluación del proyecto, tal que contemple las siguientes actividades:
-
-\begin{itemize}
-	\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento a aplicar. 
-	\item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, y los problemas que surgieron y cómo se solucionaron:
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento para dejar registro.
-	\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:
-	  - Indicar esto y quién financiará los gastos correspondientes.
-\end{itemize}
-
-\end{consigna}
 
 
 \end{document}
