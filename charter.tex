@@ -40,7 +40,7 @@
  
 \fechaINICIO{22 de agosto de 2023}		%Fecha de inicio de la cursada de GdP \fechaInicioName
 \fechaFINALPlan{10 de octubre de 2023} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{Julio 2024 (estimada)}	%Fecha de defensa pública del trabajo final
+\fechaFINALTrabajo{Agosto 2024}	%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -71,6 +71,7 @@ Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios 
 0      & Creación del documento                                 &\fechaInicioName \\ \hline
 1      & Se completa hasta el punto 5 inclusive                 & 7 de septiembre de 2023 \\ \hline
 2      & Se completa hasta el punto 9 inclusive y se agregan correcciones de la revisión 1  & 14 de septiembre de 2023 \\ \hline
+3      & Se completa hasta el punto 9 inclusive y se agregan correcciones de la revisión 2  & 26 de septiembre de 2023 \\ \hline
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
 %		  Así                                                    & dd/mm/aaaa \\ \hline
@@ -92,7 +93,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con la \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en la implementación de una etapa de autotuning para lograr el uso de la plataforma de detección RFID de Atheling con antenas de distinto alcance, y tendrá un presupuesto preliminar estimado de 825 h de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con la \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en la implementación de una etapa de autotuning para lograr el uso de la plataforma de detección RFID de Atheling con antenas de distinto alcance, y tendrá un presupuesto preliminar estimado de 785 h de trabajo, de las cuales 700 h son responsabilidad de la alumna, y 20228.5 USD, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -123,8 +124,7 @@ En el marco de la aplicación antes mencionada, la compañía EmTech requiere ex
 
 El proyecto presentado en este documento es parte del programa de vinculación con empresas y tiene como objetivo implementar la extensión de la plataforma de detección RFID introducida anteriormente, la cual actualmente se encuentra en uso. Para ello es necesario calcular y simular la etapa de autosintonización con ambas antenas (largo y corto alcance), actualizar el diseño del circuito impreso, generar los archivos de fabricación, portar y actualizar el firmware para que el nuevo microprocesador realice la sintonización con ambas antenas. Por último, se requiere realizar pruebas de validación y un informe de sus resultados. El proyecto será llevado a cabo por la autora de este documento en conjunto con colaboradores de la compañía EmTech.
 
-La etapa de autosintonización con las antenas se realiza por medio de un banco de capacitores con llaves, cuya conmutación es comandada por el microcontrolador embebido en la plataforma. Dicho microcontrolador detecta de forma automática la combinación óptima de capacitores para lograr comunicarse con cada antena. En la Figura 1 se muestra un diagrama de bloques de la solución. El color marrón representa la plataforma como es actualmente, mientras que el color azul muestra la propuesta de extensión. En el esquema se proponen cambios en otros módulos de comunicación, cuyo alcance excede al de este trabajo.   
-
+La etapa de autosintonización con las antenas se realiza por medio de un banco de capacitores con llaves, cuya conmutación es comandada por el microcontrolador embebido en la plataforma. Dicho microcontrolador detecta de forma automática la combinación óptima de capacitores para lograr comunicarse con cada antena. En la Figura 1 se muestra un diagrama de bloques de la solución. El color marrón representa la plataforma como es actualmente, mientras que el color azul muestra la propuesta de extensión.
 
 
 
@@ -174,10 +174,10 @@ El propósito de este proyecto es extender el uso de la plataforma de Atheling d
 
 El alcance de este proyecto comprende las siguientes actividades:
 \begin{itemize}
-	\item Simulación y cálculo de la etapa de autosintonización.
-	\item Rediseño y fabricación de un prototipo.
-	\item Adaptación del firmware al nuevo microcontrolador de ultra bajo consumo.
-	\item Actualización del firmware para que el microcontrolador realice de forma automática la sintonización con cada antena.
+	\item Simular y calcular de la etapa de autosintonización.
+	\item Rediseñar y fabricar un prototipo.
+	\item Adaptar el firmware al nuevo microcontrolador de ultra bajo consumo.
+	\item Actualizar el firmware para que el microcontrolador realice de forma automática la sintonización con cada antena.
 	\item Planificar y realizar las pruebas de validación del prototipo.
 	\item Elaborar un informe de validación del circuito actualizado.
 \end{itemize}
@@ -193,11 +193,11 @@ Para lograr el éxito de este proyecto se realizan las siguientes suposiciones:
 	\item EmTech define los requerimientos detallados y el criterio de aceptabilidad de los entregables.
 	\item EmTech pone a disposición toda la información necesaria, con el nivel de detalle adecuado.
 	\item La alumna y todos las personas involucradas acuerdan la dinámica laboral, realizando un desgloce de tareas, asignándolas a quien corresponda. 
-	\item EmTech asigna los recursos humanos competentes para llevar a cabo el re-diseño y fabricación del prototipo en un plazo de tiempo acotado (falta acordar dicho plazo con la compañía).
+	\item EmTech asigna los recursos humanos competentes para llevar a cabo el rediseño y fabricación del prototipo en un plazo de tiempo acotado (falta acordar dicho plazo con la compañía).
 	\item EmTech financia la fabricación del prototipo.
-	\item EmTech pone a disposición el Hardware necesario para realizar las pruebas de validación del prototipo.
+	\item EmTech pone a disposición el hardware necesario para realizar las pruebas de validación del prototipo.
 	\item El Director de Proyecto asignado tiene las competencias y la disponibilidad de tiempo necesarios para guiar a la alumna en las tareas específicas de este proyecto. 
-	\item La alumna dispone de tiempo para dedicar al proyecto de no menos de 10hs semanales hasta su culminación.
+	\item La alumna dispone de tiempo para dedicar al proyecto de no menos de 10 h semanales hasta su culminación.
 	
 \end{itemize}
 
@@ -207,33 +207,34 @@ Para lograr el éxito de este proyecto se realizan las siguientes suposiciones:
 
 
 \begin{enumerate}
-	\item Requerimientos generales de funcionalidad
+	\item Requerimientos generales de funcionalidad\\
 	El sistema debe:
 		\begin{enumerate}
 			\item  Leer etiquetas RFID HDX bajo el estándar ISO 11785.
-			\item  Sintonizar automáticamente de la etapa de radiofrecuencia para lectura de las etiquetas.
+			\item  Sintonizar automáticamente  la etapa de radiofrecuencia para lectura de las etiquetas.
 			\item  Leer las etiquetas hasta una distancia máxima de 60 cm.
 			\item  Indicar mediante un estímulo sonoro la correcta lectura de una etiqueta.
 			\item  Implementar una comunicación MODBUS vía RS485 para la recepción de comandos de control y lectura de datos.
 			\item  Comandar una salida a relé normal abierta, vía la recepción de un comando a través de la interfaz MODBUS.
 			\item  Contar con la posibilidad de utilizar una o dos antenas, configurable vía selectores en el PCB.
+			\item Contar con un módulo Bluetooth para lectura en sitio de las etiquetas detectadas. 
 
 		\end{enumerate}
 	\item Requerimientos de desarrollo del prototipo 
 		\begin{enumerate}
-			\item El desarrollo del prototipo se basará en la plataforma de lectura Atheling RFID V1.
-			\item La decodificación de las etiquetas deberá implementarse con base en el circuito integrado TMS3705.
+			\item El desarrollo del prototipo debe basarse en la plataforma de lectura Atheling RFID V1.
+			\item La decodificación de las etiquetas  debe implementarse con base en el circuito integrado TMS3705.
 			\item El control y procesamiento de datos del sistema debe basarse en un microcontrolador STM32L152CBT6.
-			\item La plataforma debe contar con una interfaz para su programación mediante un programador externo, sugerencia no estricta: USB ST-Link.
+			\item La plataforma debe contar con una interfaz para su programación mediante un programador externo. El programador y depurador USB ST-Link debe tenerse en cuenta como sugerencia.
 			\item Se deben mantener las dimensiones 2D y fijaciones de la plataforma Atheling RFID V1.
-			\item Se deben implementar cambios en el circuito de potencia y en el tamaño de los agujeros
+			\item Se deben implementar cambios en el circuito de potencia y en el tamaño de los agujeros.
 			
 		\end{enumerate}
 	\item Requerimientos de firmware
 	\begin{enumerate}
 			\item Portar y/o rehacer el firmware actual para que funcione en el nuevo microcontrolador. 
 			\item Desarrollar el código para autosintonización.
-			\item Desarrollar drivers para las interfaces de programación, Módulo BLE, RS485, otros periféricos como alarmas sonoras, llaves, etc.
+			\item Desarrollar drivers para las interfaces de programación, Módulo BLE, RS485, otros periféricos como alarmas sonoras, llaves, y los circuitos integrados necesarios para cumplir con los requerimientos funcionales de este documento.
 			\end{enumerate}
 	\item Requerimientos de control de cambios
 	\begin{enumerate}
@@ -242,11 +243,13 @@ Para lograr el éxito de este proyecto se realizan las siguientes suposiciones:
 	
 	\item Requerimientos documentales
 	\begin{enumerate}
-			\item Se deberá realizar la documentación de desarrollo del código de acuerdo a los lineamientos de documentación de EmTech. 
+			\item Se debe realizar la documentación de desarrollo del código de acuerdo a los lineamientos de documentación de EmTech. 
+			\item Se debe realizar la documentación de desarrollo del código de acuerdo a los lineamientos de documentación de EmTech.
+			\item Se debe entregar el informe de avance y la memoria técnica de este proyecto, de acuerdo con los requerimientos de esta casa de altos estudios.
 			\end{enumerate}
 			\item Requerimientos de validación y pruebas
 	\begin{enumerate}
-			\item Se deberá validar el funcionamiento del prototipo mediante pruebas de laboratorio que simulen escenarios de uso la plataforma.
+			\item Se deberá validar el funcionamiento del prototipo mediante pruebas de laboratorio que simulen escenarios de uso de la plataforma.
 			\end{enumerate}
 \end{enumerate}
 
@@ -255,7 +258,76 @@ Para lograr el éxito de este proyecto se realizan las siguientes suposiciones:
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
 
-En el siguiente párrafo se describe lo expresado por Mauro Koeing, impulsor del proyecto: "Como impulsor del proyecto quiero contar con una etapa automática de sintonización del lector con las antenas para poder utilizar la plataforma en ambientes con diversas condiciones de ruido electromagnético. También quiero mejorar la conectividad de la actual versión y agregar la opción para la utilización de más de una antena."
+A continuación se enumeran las historias de usuarios identificadas. Para poder medir el tama˜no de cada historia se ha realizado una ponderación numérica con base en la serie de Fibonacci 0,
+1, 2, 3, 5, 8, 13, 21, 34, 55, .... Los criterios y las ponderaciones consideradas son las siguientes:
+\begin{enumerate}
+\item Dificultad del trabajo
+      \begin{itemize}
+      \item Bajo = 1
+      \item Medio = 5
+      \item Alto = 13
+      \end{itemize}
+\item Complejidad del trabajo
+      \begin{itemize}
+      \item Bajo = 2
+      \item Medio = 5
+      \item Alto = 13
+      \end{itemize}
+\item Riesgo del trabajo
+      \begin{itemize}
+      \item Bajo = 1
+      \item Medio = 3
+      \item Alto = 8
+      \end{itemize}
+\end{enumerate}
+Luego, cada historia de usuario obtiene un puntaje (Story Points) que resulta de aproximar la suma de su dificultad, su complejidad y su riesgo al número más cercano de la serie de Fibonacci.
+
+\subsection{Historia de Cuidador de Animales}
+
+``Como cuidador de animales quiero poder identificar a cada animal, para contarlos y evitar pérdidas''
+\begin{enumerate}
+      \item Dificultad = 5
+      \item Complejidad = 2
+      \item Riesgo = 3
+\end{enumerate}
+ Total: \textbf{Storypints = 8}
+
+\subsection{Historia del Zootécnico} 
+``Como zootécnico quiero balancear la alimentación de los animales para que el engorde sea parejo, para ello necesito identificar cada animal y su historial de peso''
+\begin{enumerate}
+      \item Dificultad = 13
+      \item Complejidad = 5
+      \item Riesgo = 3
+\end{enumerate}
+ Total: \textbf{Storypints = 21 }
+ 
+\subsection{Historia del dueño del campo}
+``Como dueño del campo quiero tener la información al alcance de la mano para dar seguimiento y tomar decisiones estratégicas sobre mis animales.''
+\begin{enumerate}
+      \item Dificultad = 13 
+      \item Complejidad = 13
+      \item Riesgo = 3
+\end{enumerate}
+ Total: \textbf{Storypints = 34 }
+
+\subsection{Historia del encargado de soporte técnico} 
+``Como encargado de soporte técnico quiero evitar dificultades en la instalación de los nodos, por lo que necesito que el lector tenga una buena relación señal/ruido, para evitar lecturas espúrias.''
+\begin{enumerate}
+      \item Dificultad = 5
+      \item Complejidad = 13
+      \item Riesgo = 3
+\end{enumerate}
+ Total: \textbf{Storypints = 21 }
+ 
+\subsection{Historia del impulsor del proyecto} 
+``Como impulsor del proyecto quiero ampliar la plataforma para lograr robustez ante el ruido electromagnético para poder usar nuestros equipos en zonas más urbanizadas y en distintas condiciones de montaje, por ejemplo, sobre estructuras metálicas que afecten las características de las antenas.''
+\begin{enumerate}
+      \item Dificultad = 5
+      \item Complejidad = 13
+      \item Riesgo = 3
+\end{enumerate}
+ Total: \textbf{Storypints = 21 }
+ 
 
 
 \section{8. Entregables principales del proyecto}
@@ -270,11 +342,13 @@ Los entregables del proyecto son:
 	\item Código fuente del firmware.
 	\item Documentación del código.
 	\item Informe de cierre del proyecto.
+	\item Informe de avance.
+	\item Memoria técnica.
 
 \end{itemize}
 
 
-\section{9. Desglose del trabajo en tareas}
+\section{9. Desglose del trabajo en tareas: 785 h totales, a cargo de la alumna 700 h } 
 \label{sec:wbs}
 
 \begin{enumerate}
@@ -298,21 +372,21 @@ Los entregables del proyecto son:
 	\item Selecionar los componentes: 20 h
 	\item Calcular los circuitos: 10 h
 	\item Diseñar los circuitos esquemáticos: 20 h
-	\item Confeccionar memorias de cálculo: 10 h
-	\item Confeccionar Bill Of Materials (BOM): 5 h
-	\item Confeccionar esquemáticos entregables: 20 h
+	\item Confeccionar las memorias de cálculo: 10 h
+	\item Confeccionar el Bill Of Materials (BOM): 5 h
+	\item Confeccionar los esquemáticos entregables: 20 h
 	\item Diseñar el PCB: 40 h
-	\item Confeccionar documentos de fabricación (gerbers, Pick and Place, etc.): 10 h
+	\item Confeccionar los documentos de fabricación (gerbers, Pick and Place, etc.): 10 h
 	\item Modelar CAD 3D del PCB: 5 h
 	\item Verificar la compatibilidad mecánica/espacial del PCB dentro del gabinete: 1 h
 	\end{enumerate}
 	
 \item Fabricación del prototipo: 120 h
 	\begin{enumerate}
-	\item Buscar proveedores y solicitar cotizaciones: 20 h
-	\item Rediseñar el PCB en función de la retroalimentación con el/los fabricantes: 10 h
+	\item Buscar proveedores y solicitar cotizaciones: 20 h (a cargo de EmTech)
+	\item Rediseñar el PCB en función de la retroalimentación con el/los fabricantes: 10 h 
 	\item Dar seguimiento a la fabricación: 10 h
-	\item Fabricar el PCB y montar componentes: 40 h
+	\item Fabricar el PCB y montar componentes: 40 h (a cargo de EmTech)
 	\item Integrar el sistema embebido al gabinete, con sus fijaciones, fuente de alimentación, etc.: 40 h
     \end{enumerate}
     
@@ -331,11 +405,11 @@ Los entregables del proyecto son:
     \item Analizar y depurar el código: 40 h
     \end{enumerate}
 
-\item Diseño de pruebas de validación: 19 h
+\item Diseño de pruebas de validación: 25 h
     \begin{enumerate}
-    \item Definir criterios de aceptación del comportamiento de la plataforma: 20 h
-    \item Definir el alcance de las pruebas a realizarse: 2 h
-    \item Definir los recursos necesarios (espacio, instrumentación, personal, etc): 5 h
+    \item Definir criterios de aceptación del comportamiento de la plataforma: 20 h (a cargo de EmTech)
+    \item Definir el alcance de las pruebas a realizarse: 2 h (a cargo de EmTech)
+    \item Definir los recursos necesarios (espacio, instrumentación, personal, etc): 5 h (a cargo de EmTech)
     
     \end{enumerate}
     
@@ -348,7 +422,7 @@ Los entregables del proyecto son:
 \item Presentación final del proyecto: 89 h
     \begin{enumerate}
     \item Confeccionar el informe de avance: 30 h
-    \item Confeccionar las memorias del proyecto: 30 h
+    \item Confeccionar la memoria técnica: 30 h
     \item Confeccionar la presentación pública: 20 h
     \item Practicar la presentación en conjunto con el director: 5 h
     \end{enumerate}
@@ -360,30 +434,52 @@ Los entregables del proyecto son:
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
 
-\begin{consigna}{red}
-Armar el AoN a partir del WBS definido en la etapa anterior. 
+\begin{figure}
+	\centering
+	
+	\begin{tikzpicture}[node distance=2.5cm]
+	
+	\tikzstyle{block} = [rectangle, draw, fill=cyan!40, 
+	text width=10em, text centered, rounded corners, minimum height=3em]
+	\tikzstyle{criticalblock} = [rectangle, draw, fill=magenta!40, 
+	text width=10em, text centered, rounded corners, minimum height=3em]
+	\tikzstyle{line} = [draw, -latex']
+	
+	\node [block] (init) {Inicio 22/08/2023};
+	\node [block, below of=init]              	    (1) {1.Planificación del Proyecto:78 h };
+	\node [block, below of=1]                  	    (2) {2.Simulación y Cálculo de la etapa de autosintonización: 45 h};
+	\node [block, below of=2]	                    (3) {3.Diseño del prototipo: 141 h};
+	\node [criticalblock, below of=3, left of=3, node distance=4cm]                       (4) {4.Fabricación del prototipo: 120 h};
+	\node [block, below of=3, right of=3, node distance=4cm]    (5) {5.Desarrollo de Firmware: 172 h};
+	\node [block, below of=5]                  	    (6) {6.Prueba de Firmware: 45 h};
+	\node [block, below of=4]                    	(7) {7.Diseño de pruebas de validación: 27 h};
+	\node [criticalblock, below of=7, node distance=2.5cm,right of=7, node distance=4cm] 				    	(8) {8.Pruebas de Validación: 70 h};
+	\node [block, below of=8] 					    (9) {9.Presentación Final del proyecto: 89 h };
+	\node [criticalblock, below of=9]                       (10){Defensa Pública 01/08/2024};
 
-%La figura \ref{fig:AoN} fue elaborada con el paquete latex tikz y pueden consultar la siguiente referencia \textit{online}:
-
-%\url{https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ:_A_Tutorial_for_Beginners_(Part_3)\%E2\%80\%94Creating_Flowcharts}
-
-\end{consigna}
-
-\begin{figure}[htpb]
-\centering 
-\includegraphics[width=.8\textwidth]{./Figuras/AoN.png}
-\caption{Diagrama de \textit{Activity on Node}.}
-\label{fig:AoN}
+\node [rectangle, draw, fill=magenta!40, 
+	text width=6em, text centered, rounded corners, minimum height=1em, left of=1, node distance=6cm] (leyenda2) {actividad crítica};	
+	
+	\path [line] (init) -> 	(1);
+	\path [line] (1) 	-> 	(2);
+	\path [line] (2) 	-> 	(3);
+	\path [line] (3) 	|-  (4);
+	\path [line] (3) 	|- 	(5);
+	\path [line] (4) 	-> 	(7);
+	\path [line] (5) 	-- 	(6);
+	\path [line] (6) 	|- 	(8);
+	\path [line] (7) 	|- 	(8);
+	\path [line] (8) 	-- 	(9);
+	\path [line] (9) 	-- 	(10);
+	
+	
+	\end{tikzpicture}
+	\caption{Diagrama AoN}
 \end{figure}
-
-Indicar claramente en qué unidades están expresados los tiempos.
-De ser necesario indicar los caminos semicríticos y analizar sus tiempos mediante un cuadro.
-Es recomendable usar colores y un cuadro indicativo describiendo qué representa cada color, como se muestra en el siguiente ejemplo:
-
-
 
 \section{11. Diagrama de Gantt}
 \label{sec:gantt}
+En las siguientes páginas se muestra el Diagrama de Gantt de acuerdo al WBS descripto en la sección 9.
 
 \begin{landscape}
 %\rotatebox{90}{%
@@ -391,7 +487,7 @@ Es recomendable usar colores y un cuadro indicativo describiendo qué representa
 	hgrid,
 vgrid,
 	x unit=0.15cm,
-	y unit chart=0.85cm,
+	y unit chart=1cm,
 time slot format=isodate,
 time slot unit=day,
 bar/.append style={fill=cyan!30},
@@ -439,7 +535,7 @@ link/.style={|-to, line width=0.5pt, magenta},
 \begin{ganttchart}[
 	hgrid,
 vgrid,
-	x unit=0.15cm,
+	x unit=0.146cm,
 	y unit chart=0.85cm,
 time slot format=isodate,
 time slot unit=day,
@@ -467,27 +563,35 @@ link/.style={|-to, line width=0.5pt, magenta},
 	\ganttbar[name=33]{3.3 Diseñar esquemáticos}{2024-01-02}{2024-01-04} \\
 	\ganttbar[name=34]{3.4 Confeccionar memorias}{2024-01-04}{2024-01-05} \\
 	\ganttbar[name=35]{3.5 Confeccionar BOM}{2024-01-05}{2024-01-06} \\
-	\ganttbar[name=36]{3.6 Confeccionar de esquemáticos entregables}{2024-01-08}{2024-01-10} \\
-	\ganttbar[name=37]{3.7 Diseñar el PCBs}{2024-01-10}{2024-02-07} \\
+	\ganttbar[name=36]{3.6 Confeccionar los esquemáticos entregables}{2024-01-08}{2024-01-10} \\
+	\ganttbar[name=37]{3.7 Diseñar PCB}{2024-01-10}{2024-02-07} \\
 	\ganttbar[name=38]{3.8 Confeccionar documentos de fabricación}{2024-02-07}{2024-02-08}\\
 	\ganttbar[name=39]{3.9 Modelar 3D del PCB}{2024-02-08}{2024-02-09} \\
 	\ganttbar[name=310]{3.10 Verificar la compatibilidad mecánica}{2024-02-09}{2024-02-09} \\
 	
 	
 	\ganttgroup{4 Fabricación del prototipo}{2024-02-09}{2024-04-07} \\
-	\ganttbar[name=31]{4.1 Gestión de compras}{2024-02-09}{2024-02-15} \\
+	\ganttbar[name=41]{4.1 Gestión de compras}{2024-02-09}{2024-02-15} \\
 	\ganttbar[name=42]{4.2 Rediseñar el PCB}{2024-02-09}{2024-02-15} \\
 	\ganttbar[name=43]{4.3 Dar seguimiento a la fabricación}{2024-02-15}{2024-03-07} \\
     \ganttbar[name=44]{4.4 Montaje y puesta en marcha inicial}{2024-03-07}{2024-04-07} \\
-	\ganttbar[name=45]{4.5 integrar el sistema embebido}{2024-03-07}{2024-04-07} \\
-	\ganttmilestone{Prototipo Integrado con HW funcionando}{2024-04-07}\\
+	\ganttbar[name=45]{4.5 Integrar el sistema embebido}{2024-03-07}{2024-04-07} \\
+	\ganttmilestone[name=46]{Prototipo Integrado con HW funcionando}{2024-04-07}
 
-\ganttlink[]{31}{32}
+\ganttlink[]{32}{31}
 \ganttlink[]{32}{33}
 \ganttlink[]{32}{34}
 \ganttlink[]{35}{37}	
 \ganttlink[]{37}{38}
 \ganttlink[]{39}{310}
+
+\ganttlink[]{43}{42}
+\ganttlink[]{43}{41}
+\ganttlink[]{45}{43}
+\ganttlink[]{44}{43}
+\ganttlink[]{46}{44}
+\ganttlink[]{46}{45}
+
 \end{ganttchart}
 %}
 %\end{landscape}
@@ -499,7 +603,7 @@ link/.style={|-to, line width=0.5pt, magenta},
 \begin{ganttchart}[
 	hgrid,
 vgrid,
-	x unit=0.15cm,
+	x unit=0.263cm,
 	y unit chart=0.85cm,
 time slot format=isodate,
 time slot unit=day,
@@ -517,7 +621,7 @@ link/.style={|-to, line width=0.5pt, magenta},
 	xshift=+4.5cm,
 	yshift=0.4cm,
 }
-]{2024-04-07}{2024-06-28}
+]{2024-04-07}{2024-06-7}
 
 	
 	\gantttitlecalendar{year, month} \\
@@ -534,12 +638,23 @@ link/.style={|-to, line width=0.5pt, magenta},
 	\ganttbar[name=61]{6.1 Montar periféricos de prueba 
 }{2024-04-07}{2024-04-30} \\
 	\ganttbar[name=62]{6.2 Prueba de FW y corrección de bugs}{2024-05-28}{2024-06-07} \\
+	\ganttgroup{7 Diseño de pruebas de validación}{2024-05-28}{2024-06-07} \\
+	\ganttbar[name=71]{7.1 Definir criterios de aceptación}{2024-05-28}{2024-06-02} \\
+	\ganttbar[name=72]{7.2 Definir el alcance de las pruebas}{2024-06-02}{2024-06-03} \\
+	\ganttbar[name=73]{7.3 Definir los recursos necesarios}{2024-06-03}{2024-06-03}  \\
 
 	\ganttlink[]{51}{52}
 	\ganttlink[]{52}{53}
 	\ganttlink[]{52}{54}
 	\ganttlink[]{53}{55}
-	\ganttlink[]{56}{61}
+	
+	\ganttlink[]{56}{55}
+	\ganttlink[]{53}{54}	
+	
+	
+	\ganttlink[]{72}{71}
+	\ganttlink[]{73}{72}
+	
 	\ganttlink[]{61}{62}
 
 	
@@ -556,22 +671,16 @@ link/.style={|-to, line width=0.5pt, magenta},
 \begin{ganttchart}[
 	hgrid,
 	vgrid,
-	x unit=0.25cm,
+	x unit=0.31cm,
 	y unit chart=1cm,
 	time slot format=isodate,
 	time slot unit=day,
 	bar/.append style={fill=cyan!30},
 	group/.append style={fill=magenta!50},
 	link/.style={->, thick}
-	]{2024-05-28} {2024-08-03}
+	]{2024-06-08} {2024-08-03}
 	
 	\gantttitlecalendar{year, month} \\
-
-\ganttgroup{7 Diseño de pruebas de validación}{2024-05-28}{2024-06-07} \\
-	\ganttbar[name=71]{7.1 Definir criterios de aceptación}{2024-05-28}{2024-06-02} \\
-	\ganttbar[name=72]{7.2 Definir el alcance de las pruebas}{2024-06-02}{2024-06-03} \\
-	\ganttbar[name=73]{7.3 Definir los recursos necesarios}{2024-06-03}{2024-06-03}  \\
-
 	
 	\ganttgroup{8 Pruebas de validación}{2024-06-08}{2024-07-08} \\
 	\ganttbar[name=81]{8.1 Realizar pruebas de validación}{2024-06-08}{2024-07-07} \\
@@ -581,13 +690,22 @@ link/.style={|-to, line width=0.5pt, magenta},
 	
 	
 	
-	\ganttgroup{9 Presentación final del proyecto}{2024-07-07}{2024-08-01} \\
+	\ganttgroup{9 Presentación final del proyecto}{2024-06-08} {2024-08-03} \\
 	\ganttbar[name=91]{9.1 Confeccionar el informe de avance}{2024-07-07}{2024-07-15} \\
 	\ganttmilestone{Presentación del Avance del Proyecto}{2024-07-20} \\
-	\ganttbar[name=92]{9.2 Confeccionar las memorias del proyecto}{2024-07-07}{2024-07-21} \\
+	\ganttbar[name=92]{9.2 Confeccionar la memoria del proyecto}{2024-06-08} {2024-08-03} \\
 	\ganttbar[name=93]{9.3 Confeccionar la presentación pública}{2024-07-21}{2024-07-28} \\
 	\ganttbar[name=94]{9.4 Practicar presentación}{2024-07-28}{2024-07-29} \\
 	\ganttmilestone{Defensa Pública del Proyecto}{2024-08-01}
+
+%	\ganttlink[]{53}{55}
+%	\ganttlink[]{53}{55}
+%	\ganttlink[]{53}{55}
+%	\ganttlink[]{53}{55}
+%	\ganttlink[]{53}{55}
+
+	
+	
 \end{ganttchart}
 \end{landscape}
 %}
@@ -595,6 +713,7 @@ link/.style={|-to, line width=0.5pt, magenta},
 
 \section{12. Presupuesto detallado del proyecto}
 \label{sec:presupuesto}
+
 \begin{table}[htpb]
 \centering
 \begin{tabularx}{\linewidth}{@{}|X|c|r|r|@{}}
@@ -606,25 +725,21 @@ Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
- & 
-  \multicolumn{1}{c|}{837} &
-  \multicolumn{1}{c|}{20} &
-  \multicolumn{1}{c|}{16740} \\ \hline
-  \multicolumn{1}{|l|}{Horas de ingeniería} &
- & 
-  \multicolumn{1}{c|}{3} &
-  \multicolumn{1}{c|}{250} &
-  \multicolumn{1}{c|}{350} \\ \hline
-\multicolumn{1}{|l|}{Componentes y Fabricación de PCB} &
-   &
-   &
+Horas de Ingeniería&
+  \multicolumn{1}{c|}{837 h} &
+  \multicolumn{1}{c|}{20 USD/h} &
+  \multicolumn{1}{c|}{16740 USD} \\ \hline
+Prototipo: Fabricación y Montaje&
+  \multicolumn{1}{c|}{3 unidades} &
+  \multicolumn{1}{c|}{250 USD/unidad} &
+  \multicolumn{1}{c|}{750 USD} \\ \hline
+\multicolumn{1}{|l|}{Componentes para validación y desarrollo} &1
+   &100 USD
+   &100 USD
    \\ \hline
-\multicolumn{1}{|l|}{Componentes y Fabricación de PCB} &
-   &
-   &
-   \\ \hline
+
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
+  \multicolumn{1}{c|}{17590 USD} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
@@ -632,112 +747,194 @@ Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
+\multicolumn{1}{|l|}{Costos indirectos 0,15* costos directos} &1
+&2638 USD
+   &2638 USD
    \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
+  \multicolumn{1}{c|}{2638 USD} \\ \hline
 \rowcolor[HTML]{C0C0C0}
-\multicolumn{3}{|c|}{TOTAL} &
+\multicolumn{3}{|c|}{TOTAL} & 20228.5 USD
    \\ \hline
 \end{tabularx}%
 \end{table}
 
-
+Como los valores son expresados en dólares estadounidenses, para estimar el valor en pesos argentinos, se toma la cotización de divisas oficial del BNA venta del día 27/09/2023: 350 ARS/USD. De esta manera el total del presupuesto del proyecto es 7.079.975 ARS.
 
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
 
- 
-Riesgo 1: falta de disponibilidad de componentes
+
+Riesgo 1: Errores de diseño del PCB que derivan en imposibilidad de fabricación y/o montaje de componentes
 \begin{itemize}
-	\item Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).\\
+	\item Severidad (S): 8. Se asigna este valor de severidad ya que de ocurrir este evento el proyecto no puede continuar y de debe empezar nuevamente con el diseño para corregir estos errores
+	\item Ocurrencia (O): 3. Se asigna este valor ya que los archivos de fabricación serán revisados por profesionales experimentados en la fabricación de este tipo de sistemas embebidos.
+\end{itemize}
+
+ 
+Riesgo 2: Falta de disponibilidad de componentes electrónicos
+\begin{itemize}
+	\item Severidad (S): 10. Se asigna este valor de severidad ya que, por ejemplo, si no se lograse conseguir el microprocesador hay que rehacer todo el proyecto, incluyendo el diseño del PCB, el firmware, drivers, etc.\\
 	Justificar el motivo por el cual se asigna determinado número de severidad (S).
-	\item Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de (O). 
+	\item Probabilidad de ocurrencia (O): 6. Se asigna este valor de probabilidad de ocurrencia debido a que en el pasado ya ocurrió una escacez de componentes de estas características y en el contexto macro-económico del país existe demasiada incertidumbre y dificultades para la importación de este tipo de componentes.\\
+	
 \end{itemize}   
 
-Riesgo 2:
+Riesgo 3: Fallas durante el montaje de componentes electrónicos
 \begin{itemize}
-	\item Severidad (S): 
-	\item Ocurrencia (O):
+	\item Severidad (S): 9. Se asigna este valor ya que este tipo de fallas deriva en gastos adicionales de reparación o bien pueden dejar inutilizables componentes y/o circuitos impresos, dejando como consecuencia una gran pérdida tanto material como de tiempo.
+	\item Ocurrencia (O): 7. Se asigna este valor ya que el proceso de montaje de los componentes se realiza en un laboratorio con un proceso artesanal no automatizado.
 \end{itemize}
 
-Riesgo 3:
+Riesgo 4: Fallas durante las pruebas de validación que derivan en el descarte del sistema embebido
 \begin{itemize}
-	\item Severidad (S): 
-	\item Ocurrencia (O):
+	\item Severidad (S): 10. Se asigna este valor ya que la ocurrencia de esta falla deriva en el descarte del sistema embebido con su consecuente pérdida económica.
+	\item Ocurrencia (O): 3. Se asigna este valor de probabilidad baja ya que la alumna cuenta con amplia experiencia en laboratorios con el uso de dispositivos electrónicos de alta complejidad y en la integración de sistemas embebidos a sistemas fisicos.
 \end{itemize}
 
+Riesgo 5: Demoras excesivas en la fabricación y/o entrega del prototipo
+\begin{itemize}
+	\item Severidad (S): 7. Se asigna este valor ya que la ocurrencia de este evento retrasaría al proyecto.
+	\item Ocurrencia (O): 5. Se asigna este valor ya que es habitual experimentar demoras en envíos internacionales.
+\end{itemize}
 
-b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
+Riesgo 6: El firmware es poco eficiente y tiene fallas aleatorias
+\begin{itemize}
+	\item Severidad (S): 5. Se asigna este valor ya que el sistema de detección de animales no es crítico, es decir no pone en riesgo la integridad física de ningún ser vivo ni la integridad de los circuitos.
+	\item Ocurrencia (O): 3. Se asigna este valor ya que la alumna utilizará los lineamientos de desarrollo de software de EmTech y las buenas prácticas de programación aprendidas en la CESE. 
+\end{itemize}
+
+Riesgo 7: EmTech evalúa y decide no continuar con el proyecto
+\begin{itemize}
+	\item Severidad (S): 10. Se asigna este valor ya que implicaría el cierre del proyecto. 
+	\item Ocurrencia (O): 1. Se asigna este valor ya que según lo pactado con EmTech el proyecto cuenta con el impulso necesario para llevarse a cabo en el tiempo estipulado en el presente documento. 
+\end{itemize}
+
+\newpage
+En la siguiente tabla de gestión de riesgos el RPN se calcula como S x O. Como los valores asignados son del 1 al 10 en S y O, el valor máximo posible del RPN es 100. Se implementará un plan de mitigación de riesgos para aquellos eventes cuyo RPN supere 50. El * indica el nuevo valor luego de implementar las acciones para mitigar los riesgos. 
+
 
 \begin{table}[htpb]
 \centering
 \begin{tabularx}{\linewidth}{@{}|X|c|c|c|c|c|c|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0} 
-Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
+Riesgo                                                & S & O & RPN & S* & O* & RPN* \\ \hline
+Errores de diseño del PCB                             &8  &3  &24   &N/A  &N/A &N/A      \\ \hline
+Falta de disponibilidad de componentes electrónicos   &10 &6  &60   &10  &3  &30      \\ \hline
+Fallas de montaje de componentes electrónicos &9  &7  &63    &9  &3  &27      \\ \hline
+Fallas durante las pruebas de validación              &10 &3  &30   &N/A  &N/A &N/A      \\ \hline
+Demoras en la fabricación y/o envío                   &7   &5   &35 &N/A  &N/A  &N/A      \\ \hline
+Firmware poco eficiente y no determinístico           &5 &3   &15  &N/A &N/A &N/A      \\ \hline
+Cierre del proyecto por parte de EmTech               &10 &1  &10  &N/A  &N/A  &N/A      \\ \hline
 \end{tabularx}%
 \end{table}
 
-Criterio adoptado: 
-Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a...
+\textbf{Plan de mitigación de riesgos:}
 
-Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
-
-c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
  
-Riesgo 1: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
-  Nueva asignación de S y O, con su respectiva justificación:
-  - Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de severidad (S).
-  - Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de (O).
+Riesgo 2: Falta de disponibilidad de componentes electrónicos
 
-Riesgo 2: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
- 
-Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
+Para disminuir la probabilidad de ocurrencia de este evento, se gestionará la compra con anticipación los componentes críticos, previo al inicio del desarrollo de software y del diseño del PCB. De esta manera, de no haber disponibilidad de exxactamente el componente que se desea utilizar, es posible buscar una alternativa de prestaciones similares antes de avanzar con el trabajo. 
+\begin{itemize}	
+	\item Severidad (S): 10. Se asigna este valor de severidad ya que, por ejemplo, si no se lograse conseguir el microprocesador hay que rehacer todo el proyecto, incluyendo el diseño del PCB, el firmware, drivers, etc.\\
+	\item Probabilidad de ocurrencia (O): 3. Se asigna este valor de probabilidad de ocurrencia debido a que realizar la gestión de compras de componentes críticos de forma anticipada disminuye la probabilidad de no tener disponibilidad de los mismos.\\
+	
+\end{itemize}   
+
+Riesgo 3: Fallas durante el montaje de componentes electrónicos
+
+Para disminuir la probabilidad de ocurrencia de este evento, se contempla el rediseño en función de la retroalimentación de los fabricantes y montadores.
+\begin{itemize}
+	\item Severidad (S): 9. Se asigna este valor ya que este tipo de fallas deriva en gastos adicionales de reparación o bien pueden dejar inutilizables componentes y/o circuitos impresos, dejando como consecuencia una gran pérdida tanto material como de tiempo.
+	\item Ocurrencia (O): 3. Se asigna este valor ya que al rediseñar el PCB en función de los consejos que devienen de la experiencia de los fabricantes y montadores se disminuye la complejidad del montaje y, por lo tanto, la probabilidad de fallas.  
+\end{itemize}
 
 
 
-
+\newpage
 \section{14. Gestión de la calidad}
 \label{sec:calidad}
 
-\begin{consigna}{red}
-Elija al menos diez requerientos que a su criterio sean los más importantes/críticos/que aportan más valor y para cada uno de ellos indique las acciones de verificación y validación que permitan asegurar su cumplimiento.
+En esta sección se detallan los requerimientos considerados como críticos por la alumna y las acciones a seguir para realizar la validación y verificación de los mismos. 
 
-\begin{itemize} 
-\item Req \#1: copiar acá el requerimiento.
+\begin{enumerate}
 
-\begin{itemize}
-	\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. Detallar 
-	\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. Detallar  
+
+	
+\item  Leer etiquetas RFID HDX bajo el estándar ISO 11785.
+          \begin{itemize}
+	      \item Verificación: Para verificar que la lectura cumple con el estándar ISO 11785 se tomará el mismo como referencia y se probará punto por punto los requerimientos del estándar simulando la lectura de una etiqueta. 
+	      \item Validación: Para validar este requerimiento se mostrará la lectura de las etiquetas durante las pruebas de validación del prototipo, culminando con un informe detallado de las características de esta funcionalidad. 
+          \end{itemize}
+\item  Sintonizar automáticamente  la etapa de radiofrecuencia para lectura de las etiquetas.
+		  \begin{itemize}
+	      \item Verificación: Se simulará a nivel laboratorio el ingreso de la radiofrecuencia y el comportamiento del software encargado de la autosintonización.
+          \item Validación: Se validará el comportamiento del prototipo durante las pruebas de validación, simulando físicamente el movimiento de los animales con sus etiquetas. 
 \end{itemize}
+\item  Leer las etiquetas hasta una distancia máxima de 60 cm.
+			\begin{itemize}
+        	\item Verificación: Se medirá con un LVDT acercando y alejando una etiqueta al lector para verificar que la distancia de detección cumpla con lo requerido. 
+	        \item Validación: Se validará el comportamiento del prototipo durante las pruebas de validación, simulando físicamente el movimiento de los animales con sus etiquetas y midiendo la distancia máxima a la cual el lector es capaz de recibir correctamente la información de las etiquetas.
+	        \end{itemize} 
+\item  Contar con la posibilidad de utilizar una o dos antenas, configurable vía selectores en el PCB.
+			 \begin{itemize}
+         	\item Verificación: se verificara la conmutación con un jumper o un switch entre una antena y otra simulando la impedancia de las mismas a escala laboratorio.
+	        \item Validación: Se validará el comportamiento del prototipo durante las pruebas de validación, mostrando que el mismo es capaz de usar los dos tipos de antenas requeridos mediante la selección por HW.  
+            \end{itemize}
+			
+\item Se deben mantener las dimensiones 2D y fijaciones de la plataforma Atheling RFID V1.
+			\begin{itemize}
+        	\item Verificación: Se realizará un modelo CAD 3D de la placa para verificar su compatibilidad con las fijaciones en la plataforma atheling
+	       \item Validación: una vez montado el sistema embebido dentro del gabinete, se realizará un conforme de fabricación que deberá ser firmado como aprobado por parte del cliente. 
+            \end{itemize}
+			
+	
+\item Portar y/o rehacer el firmware actual para que funcione en el nuevo microcontrolador. 
+			\begin{itemize}
+        	\item Verificación: Se montarán periféricos equivalentes para simular los estímulos habituales del sistema y se verificará el comportamiento determinístico equivalente a la plataforma Atheling V1.
+	        \item Validación: Se mostrará durante las pruebas de validación que el prototipo mantiene las funcionalidades comparándolo en tiempo real con el comportamiento de la plataforma Atheling V1. 
+            \end{itemize}
+\item Desarrollar el código para autosintonización.
+		\begin{itemize}
+     	\item Verificación: se simularán distintas impedancias cercanas a las de las antenas con ruidos electromagnéticos comunes en las zonas de uso, midiendo que la sintonización maximiza la relación señal/ruido en esas condiciones. 
+	    \item Validación: Durante las pruebas de validación se medirá la respuesta del prototipo en distintas condiciones de ruido electromagnético, movimiento y distintas etiquetas para validar su correcto funcionamiento. 
+        \end{itemize}
+\item Se debe mantener actualizadas las versiones de código mediante el uso del repositorio de EmTech.
+			\begin{itemize}
+         	\item Verificación: Cada vez que se realice el agregado de información al repositorio de EmTech se verificará desde el repositorio remoto que éste se haya realizado con éxito. 
+	        \item Validación: El cliente tiene acceso al repositorio y podrá observar cada commit, push y versiones realizadas en cada rama. 
+            \end{itemize}
+\item Se debe realizar la documentación de desarrollo del código de acuerdo a los lineamientos de documentación de EmTech. 
+			\begin{itemize}
+	        \item Verificación: Se solicitará al director la revisión de la documentación previo a la presentación de la misma.
+	      \item Validación: El cliente tendrá acceso a los documentos para validar el cumplimiento de los estándares de documentación de EmTech. 
+         \end{itemize}
+\item Se debe entregar el informe de avance y la memoria técnica de este proyecto, de acuerdo con los requerimientos de esta casa de altos estudios.
+			\begin{itemize}
+	       \item Verificación: Ambos documentos serán revisados por un docente de la FIUBA y el director, egresado también de la especialidad que persigue este proyecto, para verificar la conformidad con los requerimientos. 
+	       \item Validación: se entregarán los documentos a los jurados e involucrados para que validen su cumplimiento.
+         \end{itemize}
+\item Se deberá validar el funcionamiento del prototipo mediante pruebas de laboratorio que simulen escenarios de uso de la plataforma.
+			\begin{itemize}
+	       \item Verificación: Para verificar que las pruebas cumplen con los requerimientos se seguirá la planificación de éstas, registrando el comportamiento de cada subsistema del prototipo.
+	       \item Validación: Para validar las pruebas se confeccionará un informe detallado del comportamiento, el cual debe ser leído por el cliente y firmado en conformidad. 
+            \end{itemize}
+			
+\end{enumerate}
 
-\end{itemize}
-
-Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, mediciones, etc.  Las acciones de verificación suelen considerar al entregable como ``caja blanca'', es decir se conoce en profundidad su funcionamiento interno.  En cambio, las acciones de validación suelen considerar al entregable como ``caja negra'', es decir, que no se conocen los detalles de su funcionamiento interno.
-
-\end{consigna}
-
+\newpage
 \section{15. Procesos de cierre}    
 \label{sec:cierre}
 
+
+La alumna actualizará el RoadMap durante todo el proyecto para comparar con la planificación inicial. Las discrepancias que pudieran existir serán debatidas en continuo con el director y demás interesados del proyecto dentro de EmTech para ajustar, de ser necesario, el alcance de cada tarea en función de las necesidades de la empresa y lo admisible para esta Facultad. 
+
+Para el cierre del proyecto se tendrá una reunión con todos los involucrados de EmTech y la alumna en la cual se evaluarán los resultados obtenidos durante las pruebas de validación. Durante la misma se abrirá un espacio de debate para identificar las fortalezas y debilidades del prototipo así tambien como las lecciones aprendidas y las buenas prácticas aplicadas a lo largo del proyecto. La reunión será grabada y transcripta para que, a posteriori, se realice un resumen con los comentarios más importantes y se confeccione un documento de buenas prácticas. 
+
+Por último se realizará un evento de culminación, posterior a la defensa de este proyecto ante la FIUBA, a cargo de EmTech, en donde se realizará el agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores. 
+
+
+ 
 
 \end{document}
